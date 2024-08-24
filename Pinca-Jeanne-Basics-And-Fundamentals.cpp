@@ -13,11 +13,9 @@ elements.
 const int SIZE1 = 10;
 const int SIZE2 = 10;
 const int MERGED_SIZE = SIZE1 + SIZE2;
-int firstArray[SIZE1];
-int secondArray[SIZE2];	
-int mergedArray[MERGED_SIZE];
 
-void getFirstArrayElements(){
+
+void getFirstArrayElements(int firstArray[], int size){
 
 	// user input for the 10 elements for the first array
 	cout << "Enter 10 elements for the First Array: " << endl;
@@ -31,7 +29,7 @@ void getFirstArrayElements(){
 	
 }
 
-void getSecondArrayElements(){
+void getSecondArrayElements(int secondArray[], int size){
 	
 	// user input for the 10 elements for the second array
 	cout << "\nEnter 10 elements for the Second Array: " << endl;
@@ -45,7 +43,7 @@ void getSecondArrayElements(){
 	
 }
 
-void mergeArrays (){
+void mergeArrays (int firstArray[], int secondArray[], int mergedArray[], int size1, int size2){
 	
 	// Copy elements from the first array to the merged array
 	for (int i = 0; i < SIZE1; ++i) {
@@ -64,7 +62,7 @@ void mergeArrays (){
 	
 }
 
-void sortDescending(){
+void sortDescending(int mergedArray[], int size){
 	
 	//sort the array in descending order
     for (int i = 0; i < MERGED_SIZE - 1; ++i) {
@@ -80,7 +78,7 @@ void sortDescending(){
     }
 }
 
-void printSortedArray(){
+void printSortedArray(int mergedArray[], int size){
     cout << "\nMerged Array in Descending Order: ";
     for (int i = 0; i < MERGED_SIZE; ++i) {
         cout << mergedArray[i] << " ";
@@ -89,7 +87,10 @@ void printSortedArray(){
 }
 
 int main(){
-	
+	int firstArray[SIZE1];
+	int secondArray[SIZE2];	
+	int mergedArray[MERGED_SIZE];
+
 	getFirstArrayElements();
 	getSecondArrayElements();
 	mergeArrays();
@@ -99,10 +100,3 @@ int main(){
 	return 0;
 
 }
-
-
-/* post checking: do not use global variables updated file 
-> Pinca-Jeanne-Basics-And-Fundamentals_another attempt
-> always put validation
-
-*/
